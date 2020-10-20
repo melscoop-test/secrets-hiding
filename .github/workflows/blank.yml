@@ -3,21 +3,22 @@ name: Testing Secret Display
 on: [push]
 
 jobs:
-  test:
-
+  test-job:
+    
     runs-on: ubuntu-latest
-    container: "${{ secrets.DOCKER_PYTHON_VERSION }}"
+    container: $DOCKER_PY_VER
 
     steps:
+    
     - name: checkout repo
       uses: actions/checkout@v2
-
-    - name: Set up Python
+            
+    - name: use vars 
+      run: |
+        PY_VER="${{ $secrets.PYTHON_VERSION }}"
+        DOCKER_PY_VER="${{ secrets.DOCKER_PYTHON_VERSION }}"
+       
+    - name: using python
       uses: actions/setup-python@v2
       with:
-        python-version: "{{ $secrets.PYTHON_VERSION }}"
-        
-    - name: show vars output
-      run: |
-        echo "${{ secrets.DOCKER_PYTHON_VERSION }}"
-        echo "${{ secrets.PYTHON_VERSION }}"
+        python-version: $PY_VER
