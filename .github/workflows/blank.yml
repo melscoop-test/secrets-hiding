@@ -6,7 +6,7 @@ jobs:
   test:
 
     runs-on: ubuntu-latest
-    container: "${ secrets.DOCKER_PYTHON_VERSION }"
+    container: "$secrets.DOCKER_PYTHON_VERSION"
 
     steps:
     - name: checkout repo
@@ -15,9 +15,9 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: "${ secrets.PYTHON_VERSION }"
+        python-version: "$ secrets.PYTHON_VERSION "
         
     - name: show vars output
       run: |
-        echo "${ secrets.DOCKER_PYTHON_VERSION }"
-        echo "${ secrets.PYTHON_VERSION }"
+        echo "$secrets.DOCKER_PYTHON_VERSION"
+        echo "$secrets.PYTHON_VERSION"
