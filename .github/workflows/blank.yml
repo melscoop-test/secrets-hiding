@@ -4,21 +4,28 @@ on: [push]
 
 jobs:
   test:
+    
+    runs-on: ubuntu-latest
     env:
       DOCKER_PYTHON_VERSION: ${{ secrets.DOCKER_PYTHON_VERSION }}
       PYTHON_VERSION: ${{ secrets.PYTHON_VERSION }}
-    
-    name: create python container
-    runs-on: ubuntu-latest
-    container: 
-      image: "$DOCKER_PYTHON_VERSION"
-
+           
     steps:
-    
-    - name: checkout repo
-      uses: actions/checkout@v2
-      
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: "$PYTHON_VERSION"
+       - name: test vars
+         run: |
+           echo $PYTHON_VERSION
+            
+#    name: create python container
+#    runs-on: ubuntu-latest
+#    container: 
+#      image: "$DOCKER_PYTHON_VERSION"
+#
+#    steps:
+#    
+#    - name: checkout repo
+#      uses: actions/checkout@v2
+#      
+#    - name: Set up Python
+#      uses: actions/setup-python@v2
+#      with:
+#        python-version: "$PYTHON_VERSION"
