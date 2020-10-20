@@ -11,7 +11,7 @@ jobs:
     name: create python container
     runs-on: ubuntu-latest
     container: 
-      image: $DOCKER_PYTHON_VERSION
+      image: "${DOCKER_PYTHON_VERSION}"
 
     steps:
     
@@ -21,4 +21,4 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: $PYTHON_VERSION
+        python-version: "${PYTHON_VERSION}"
