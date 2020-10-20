@@ -6,11 +6,11 @@ jobs:
   test:
 
     runs-on: ubuntu-latest
-    container: ${{ secrets.DOCKER_PYTHON_VERSION }}
+    container: ${{ secrets['DOCKER_PYTHON_VERSION'] }}
 
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: ${{ secrets.PYTHON_VERSION }}
+        python-version: ${{ secrets['PYTHON_VERSION'] }}
