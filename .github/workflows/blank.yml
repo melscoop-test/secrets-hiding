@@ -7,8 +7,8 @@ jobs:
     
     runs-on: ubuntu-latest
     env:
-      DOCKER_PYTHON_VERSION: "${{ secrets.DOCKER_PYTHON_VERSION }}"
-      PYTHON_VERSION: "${{ secrets.PYTHON_VERSION }}"
+      docker_python_version: "${{ secrets.DOCKER_PYTHON_VERSION }}"
+      python_version: "${{ secrets.PYTHON_VERSION }}"
            
     steps:
        - name: test vars
