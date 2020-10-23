@@ -2,23 +2,21 @@ name: Test for secrets display error
 
 on: [push]
 
-jobs
-  test:
-    
-    runs-on: ubuntu-latest
-    env:
-      docker_python_version: "${{ secrets.docker_python_version }}"
-      python_version: "${{ secrets.python_version }}"
+jobs:
+  my-test:
+      runs-on: ubuntu-latest
+      container: 
+          image: ${{ env.docker_python_version }}
+      env:
+        docker_python_version: "${{ secrets.docker_python_version }}"
+        python_version: "${{ secrets.python_version }}"
            
-    steps:
+      steps:
        - name: test vars
          run: |
            echo ${{ env.python_version }}
             
-    name: create python container
-    container: 
-      image: ${{ env.docker_python_version }}
-#
+
 #    steps:
 #    
 #    - name: checkout repo
