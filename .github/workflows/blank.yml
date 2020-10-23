@@ -15,10 +15,9 @@ jobs:
          run: |
            echo $PYTHON_VERSION
             
-#    name: create python container
-#    runs-on: ubuntu-latest
-#    container: 
-#      image: "$DOCKER_PYTHON_VERSION"
+    name: create python container
+    container: 
+      image: "$DOCKER_PYTHON_VERSION"
 #
 #    steps:
 #    
