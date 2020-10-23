@@ -7,17 +7,17 @@ jobs:
     
     runs-on: ubuntu-latest
     env:
-      docker_python_version: "${{ secrets.DOCKER_PYTHON_VERSION }}"
-      python_version: "${{ secrets.PYTHON_VERSION }}"
+      docker_python_version: "${{ secrets.docker_python_version }}"
+      python_version: "${{ secrets.python_version }}"
            
     steps:
        - name: test vars
          run: |
-           echo $PYTHON_VERSION
+           echo $python_version
             
     name: create python container
     container: 
-      image: "$DOCKER_PYTHON_VERSION"
+      image: "$docker_python_version"
 #
 #    steps:
 #    
