@@ -2,7 +2,7 @@ name: Test for secrets display error
 
 on: [push]
 
-jobs:
+jobs
   test:
     
     runs-on: ubuntu-latest
@@ -13,7 +13,7 @@ jobs:
     steps:
        - name: test vars
          run: |
-           echo $python_version
+           echo ${{ env.python_version }}
             
     name: create python container
     container: 
